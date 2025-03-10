@@ -36,8 +36,6 @@ onplayerspawned()
     for(;;)
     {
         self waittill("spawned_player");
-    //    self maps\mp\zombies\_zm_spawner::register_zombie_damage_callback(::do_hitmarker);
-    //    self maps\mp\zombies\_zm_spawner::register_zombie_death_event_callback(::do_hitmarker_death);
         self thread drawdamagehitmarker();
     }
 }
@@ -76,7 +74,6 @@ hitmark()
 	while( 1 )
 	{
 		self waittill( "damage", amount, attacker, dir, point, mod );
-//		attacker.hitmarker.alpha = 0;
 		if( isplayer( attacker ) )
 		{
 			if( isalive( self ) )
